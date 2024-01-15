@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  namespace :admin do
+    get 'products/index'
+    get 'products/show'
+    get 'products/new'
+    get 'products/edit'
+  end
   devise_for :admins, controllers: {
     sessions: 'admin/sessions'
   }
@@ -7,8 +13,10 @@ Rails.application.routes.draw do
     registrations: 'customer/registrations'
   }
 
-  root to: 'pages#home'
-
+  namespace :admin do
+    resources :products, only: %i[index show new create edit update]
+  end
+  
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

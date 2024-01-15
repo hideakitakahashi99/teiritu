@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   namespace :customer do
+    get 'cart_items/index'
     get 'products/index'
     get 'products/show'
   end
@@ -23,6 +24,12 @@ Rails.application.routes.draw do
 
   scope module: :customer do
     resources :products, only: %i[index show]
+    resources :cart_items, only: %i[index create destroy] do
+      member do
+        patch 'increase'
+        patch 'decrease'
+      end
+    end
   end
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

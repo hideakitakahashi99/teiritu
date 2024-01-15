@@ -3,6 +3,18 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "customer/shared/error_messages", resource: resource %>
 
+
+  <div class="field">
+    <%= f.label :name, "お名前" %><br />
+    
+    <%= f.text_field :name, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :name_kana, "ふりがな" %><br />
+    <%= f.text_field :name_kana, autofocus: true %>
+  </div>
+
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>

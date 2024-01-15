@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  namespace :customer do
+    get 'products/index'
+    get 'products/show'
+  end
   namespace :admin do
     get 'products/index'
     get 'products/show'
@@ -16,7 +20,11 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :products, only: %i[index show new create edit update]
   end
-  
+
+  scope module: :customer do
+    resources :products, only: %i[index show]
+  end
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

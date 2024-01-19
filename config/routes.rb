@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   namespace :admin do
     root to: 'pages#home'
     resources :orders, only: %i[show update]
+    resources :customers, only: %i[index show update]
     get 'products/index'
     get 'products/show'
     get 'products/new'

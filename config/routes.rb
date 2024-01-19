@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+  root to:  'customer/products#index'
   namespace :customer do
     get 'cart_items/index'
     get 'products/index'
@@ -30,6 +32,8 @@ Rails.application.routes.draw do
         patch 'decrease'
       end
     end
+    resources :checkouts, only: [:create]
+    resources :webhooks, only: [:create]
   end
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

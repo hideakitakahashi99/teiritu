@@ -2,6 +2,9 @@ Rails.application.routes.draw do
 
   root to:  'customer/products#index'
   namespace :customer do
+    get 'orders/index'
+    get 'orders/show'
+    get 'orders/success'
     get 'cart_items/index'
     get 'products/index'
     get 'products/show'
@@ -34,6 +37,11 @@ Rails.application.routes.draw do
     end
     resources :checkouts, only: [:create]
     resources :webhooks, only: [:create]
+    resources :orders, only: %i[index show] do
+      collection do
+        get 'success'
+      end
+    end
   end
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

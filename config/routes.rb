@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   root to:  'customer/products#index'
   namespace :customer do
+    get 'customers/confirm_withdraw'
     get 'orders/index'
     get 'orders/show'
     get 'orders/success'
@@ -43,6 +44,12 @@ Rails.application.routes.draw do
     resources :orders, only: %i[index show] do
       collection do
         get 'success'
+      end
+    end
+    resources :customers do
+      collection do
+        get 'confirm_withdraw'
+        patch 'withdraw'
       end
     end
   end

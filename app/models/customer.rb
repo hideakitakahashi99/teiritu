@@ -33,4 +33,7 @@ class Customer < ApplicationRecord
       }
     end
   end
+  def active_for_authentication?
+    super && (status == 'normal')
+  end
 end

@@ -10,6 +10,8 @@ Rails.application.routes.draw do
     get 'products/show'
   end
   namespace :admin do
+    root to: 'pages#home'
+    resources :orders, only: %i[show update]
     get 'products/index'
     get 'products/show'
     get 'products/new'

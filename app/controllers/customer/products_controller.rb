@@ -1,4 +1,5 @@
 class Customer::ProductsController < ApplicationController
+  
   def index
     @products, @sort = get_products(params)
   end

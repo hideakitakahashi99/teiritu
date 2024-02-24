@@ -1,0 +1,134 @@
+<div class="pt-24">
+<section class="container mx-auto text-center py-6 mb-12">
+<h2 class="w-full my-2 text-5xl font-bold leading-tight text-center text-white">
+  無料体験会に参加する
+</h2>
+<div class="w-full mb-4">
+  <div class="h-1 mx-auto bg-white w-1/6 opacity-25 my-0 py-0 rounded-t"></div>
+</div>
+<h3 class="my-4 text-3xl leading-tight">
+  無料の体験会は以下のフォームよりお申し込みください。
+</h3>
+
+
+<div class=" px-4 py-8 bg-white rounded-lg shadow dark:bg-gray-800 sm:px-6 md:px-8 lg:px-10">
+<div class="self-center mb-2 text-xl font-light text-gray-800 sm:text-2xl dark:text-white">
+  お申し込みフォーム
+</div>
+<span class="justify-center text-sm text-center text-gray-500 flex-items-center dark:text-gray-400">
+ご不明な点などありましたら
+  <a href="#" target="_blank" class="text-sm text-blue-500 underline hover:text-blue-700">
+      こちら
+  </a>までお問い合わせください。
+</span>
+<div class="text-left p-6 mt-8">
+<%= form_with model: @trial, url: confirm_trials_path, local: true, data: { turbo: "false" } do |f| %>
+    <div class="flex gap-4 mb-2">
+        <div class=" relative ">
+        <%= f.label :name, 'お名前', class: 'text-gray-700' %>
+        <span class="text-red-500 required-dot">
+            *
+        </span>
+   
+    <%= f.text_field :name, autofocus: true, class: ' rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent', placeholder: "名前" %>
+        </div>
+        <div class=" relative ">
+        <%= f.label :name_kana, 'お名前(ふりがな)', class: 'text-gray-700' %>
+        <span class="text-red-500 required-dot">
+            *
+        </span>
+    <%= f.text_field :name_kana, autofocus: true, class: 'rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent', placeholder: "名前(ふりがな)" %>
+        </div>
+    </div>
+<div class="flex flex-col mb-2">
+ <div class=" relative ">
+ <%= f.label :address, 'お住まいの住所(市町村までで結構です。)', class: 'text-gray-700' %>
+    <span class="text-red-500 required-dot">
+        *
+    </span>
+    <%= f.text_area :address, class: 'rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent', placeholder: "住所(市町村までで結構です)" %>
+  </div>
+</div>
+    <div class="flex flex-col mb-2">
+        <div class=" relative ">
+        <%= f.label :tell, '電話番号', class: 'text-gray-700' %>
+        <span class="text-red-500 required-dot">
+            *
+        </span>
+    <%= f.text_field :tell, autofocus: true, class: 'rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent', placeholder: "電話番号" %>
+        </div>
+    </div>
+    <div class="flex flex-col mb-2">
+        <div class=" relative ">
+        <%= f.label :email, 'メールアドレス', class: 'text-gray-700' %>
+        <span class="text-red-500 required-dot">
+            *
+        </span>
+    <%= f.email_field :email, class: 'rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent', placeholder: "メールアドレス" %>
+
+        </div>
+    </div>
+
+  <div class="flex gap-4 mb-2">
+     <div class=" relative ">
+     <%= f.label :participants, '参加予定人数(ご自身を含め)', class: 'text-gray-700' %>
+        <span class="text-red-500 required-dot">
+         *
+        </span>
+       <%= f.number_field :participants, in: 1..30, class: 'rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent', placeholder: "参加予定人数" %>
+     </div>
+     <div class=" relative ">
+     <%= f.label :date, 'ご希望の参加日程', class: 'text-gray-700' %>          
+       <span class="text-red-500 required-dot">
+        *
+       </span>
+      <%= f.select :date, Trial::DATE_ITEMS, {include_blank: "選択して下さい"}, { class: 'rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent'} %>
+  </div>
+</div>
+
+  <%= f.label :arrival_time, '到着予定時刻（電車でお越しの場合は、最寄り駅の到着時間）', class: 'text-gray-700' %> 
+ 
+    <span class="text-red-500 required-dot">
+     *
+    </span>
+  <%= f.time_field :arrival_time, class: 'flex-1 w-full px-4 py-2 text-base text-gray-700 placeholder-gray-400 bg-white border border-gray-300 rounded-lg appearance-none focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent' %>
+
+<div class="flex items-center gap-8 pt-2">
+<%= f.label :transportation, '当日ご利用の交通手段', class: 'text-gray-700' %> 
+<span class="text-red-500 required-dot">
+  *
+</span>
+<label class="inline-flex items-center">
+<%= f.radio_button(:transportation, '車') %>
+ 
+      <span class="ml-2 text-gray-700">
+          お車
+      </span>
+  </label>
+  <label class="inline-flex items-center">
+  <%= f.radio_button(:transportation, '電車') %>
+          <span class="ml-2 text-gray-700">
+              電車
+          </span>
+      </label>
+      <label class="inline-flex items-center">
+  <%= f.radio_button(:transportation, 'それ以外の交通機関') %>
+          <span class="ml-2 text-gray-700">
+              それ以外の交通機関
+          </span>
+      </label>
+  </div>
+  <div class="pt-2">
+      <%= f.label :message, '備考', class: 'text-gray-700' %> 
+          <span class="ml-2 text-gray-700">
+          </span>
+      <%= f.text_area :message, size: '10x5', class: 'flex-1 w-full px-4 py-2 text-base text-gray-700 placeholder-gray-400 bg-white border border-gray-300 rounded-lg appearance-none focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent' %>
+  </div>
+
+               <%= f.submit '申し込む', class: "mx-auto lg:mx-0 hover:underline bg-pink-300 text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out" %>
+              
+              <% end %>
+            </div>
+            </div>
+</section>
+</div>

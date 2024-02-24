@@ -1,0 +1,91 @@
+
+<div class="container p-5 pt-24">
+
+    <section class="text-white body-font">
+      <div class="container px-5 py-8 mx-auto">
+        <div class="px-6 xl:w-1/3">
+         <h1 class="font-semibold text-2xl border-b pb-6 text-center">
+          お申し込み内容確認
+         </h1>
+         <div class="flex justify-between my-6">
+          <span class="font-semibold text-lg uppercase">お名前</span>
+          <span class="font-semibold text-lg"><%= @trial.name %></span>
+         </div>
+         <div class="flex justify-between my-6">
+         <span class="font-semibold text-lg uppercase">ふりがな</span>
+         <span class="font-semibold text-lg"><%= @trial.name_kana %></span>
+        </div>
+        <div class="flex justify-between my-6">
+        <span class="font-semibold text-lg uppercase">ご住所</span>
+        <span class="font-semibold text-lg"><%= @trial.address %></span>
+       </div>
+         <div class="flex justify-between my-6">
+          <span class="font-semibold text-lg uppercase">電話番号</span>
+          <span class="font-semibold text-lg"><%= @trial.tell %></span>
+         </div>
+         <div class="flex justify-between my-6">
+          <span class="font-semibold text-lg uppercase">メールアドレス</span>
+          <span class="font-semibold text-lg"><%= @trial.email %></span>
+         </div>
+         <div class="flex justify-between my-6">
+          <span class="font-semibold text-lg uppercase">参加予定人数</span>
+          <span class="font-semibold text-lg"><%= @trial.participants %></span>
+         </div>
+         <div class="flex justify-between my-6">
+          <span class="font-semibold text-lg uppercase">参加希望日程</span>
+          <span class="font-semibold text-lg"><%= @trial.date %></span>
+         </div>
+         <div class="flex justify-between my-6">
+          <span class="font-semibold text-lg uppercase">到着予定時刻</span>
+          <span class="font-semibold text-lg"><%= @trial.arrival_time %></span>
+         </div>
+         <div class="flex justify-between my-6">
+          <span class="font-semibold text-lg uppercase">ご利用の交通機関</span>
+          <span class="font-semibold text-lg"><%= @trial.transportation %></span>
+         </div>
+         <div class="flex justify-between my-6">
+          <span class="font-semibold text-lg uppercase">備考</span>
+          <span class="font-semibold text-lg"><%= @trial.message %></span>
+         </div>
+     
+    
+
+      <div class="d-flex">
+        
+        <%= form_with model: @trial do |f| %>
+          <%= f.hidden_field :name %>
+          <%= f.hidden_field :name_kana %>
+          <%= f.hidden_field :address %>
+          <%= f.hidden_field :tell %>
+          <%= f.hidden_field :email %>
+          <%= f.hidden_field :participants %>
+          <%= f.hidden_field :date %>
+          <%= f.hidden_field :arrival_time %>
+          <%= f.hidden_field :transportation %>
+          <%= f.hidden_field :message %>
+          <div><%= f.submit '送信', class: "w-full cursor-pointer focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2" %></div>
+        <% end %>
+        </div>
+
+        <div>
+        <%= form_with model: @trial, url: back_trials_path do |f| %>
+            <%= f.hidden_field :name %>
+            <%= f.hidden_field :name_kana %>
+            <%= f.hidden_field :address %>
+            <%= f.hidden_field :tell %>
+            <%= f.hidden_field :email %>
+            <%= f.hidden_field :participants %>
+            <%= f.hidden_field :date %>
+            <%= f.hidden_field :arrival_time %>
+            <%= f.hidden_field :transportation %>
+            <%= f.hidden_field :message %>
+          <div><%= f.submit '入力画面に戻る', class: "w-full cursor-pointer focus:outline-none text-white bg-pink-700 hover:bg-pink-800 focus:ring-4 focus:ring-pink-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2" %></div>
+        <% end %>
+        </div>
+      </div>
+
+      </div>
+      </div>
+    </section>
+
+</div>

@@ -74,3 +74,4 @@ group :test do
 end
 gem "devise"
 gem "stripe"
+gem "tailwindcss-rails", "~> 2.3"

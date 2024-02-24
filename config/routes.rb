@@ -1,24 +1,17 @@
 Rails.application.routes.draw do
-
-  root to:  'customer/products#index'
   namespace :customer do
-    get 'customers/confirm_withdraw'
-    get 'orders/index'
-    get 'orders/show'
-    get 'orders/success'
-    get 'cart_items/index'
-    get 'products/index'
-    get 'products/show'
+  resources :trials, only: [:new, :create] do
+    collection do
+        post 'confirm'
+        post 'back'
+        get 'done'
+    end
   end
-  namespace :admin do
-    root to: 'pages#home'
-    resources :orders, only: %i[show update]
-    resources :customers, only: %i[index show update]
-    get 'products/index'
-    get 'products/show'
-    get 'products/new'
-    get 'products/edit'
-  end
+end
+
+  root to:  'customer/pages#home'
+
+ 
   devise_for :admins, controllers: {
     sessions: 'admin/sessions'
   }
@@ -28,10 +21,13 @@ Rails.application.routes.draw do
   }
 
   namespace :admin do
+    root to: 'pages#home'
+    resources :orders, only: %i[show update]
+    resources :customers, only: %i[index show update]
     resources :products, only: %i[index show new create edit update]
   end
 
-  scope module: :customer do
+  scope module: :customer do 
     resources :products, only: %i[index show]
     resources :cart_items, only: %i[index create destroy] do
       member do
@@ -52,6 +48,14 @@ Rails.application.routes.draw do
         patch 'withdraw'
       end
     end
+    resources :trials, only: [:new, :create] do
+      collection do
+          post 'confirm'
+          post 'back'
+          get 'done'
+      end
+    end
+
   end
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

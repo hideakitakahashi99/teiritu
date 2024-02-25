@@ -1,0 +1,21 @@
+databases:
+  - name: nora-college
+    databaseName: noradb
+    user: 
+    region: Singapore
+
+services:
+  - type: web
+    name: nora-college
+    env: ruby
+    region: Singapore
+    plan: free
+    buildCommand: "./bin/render-build.sh"
+    startCommand: "bundle exec puma -C config/puma.rb"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: noradb
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false

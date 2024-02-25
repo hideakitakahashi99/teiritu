@@ -11,6 +11,9 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.1].define(version: 2024_02_03_053626) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -53,8 +56,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_03_053626) do
 
   create_table "cart_items", force: :cascade do |t|
     t.integer "quantity", default: 1, null: false
-    t.integer "customer_id", null: false
-    t.integer "product_id", null: false
+    t.bigint "customer_id", null: false
+    t.bigint "product_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["customer_id"], name: "index_cart_items_on_customer_id"
@@ -79,8 +82,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_03_053626) do
   create_table "order_details", force: :cascade do |t|
     t.integer "price", null: false
     t.integer "quantity", null: false
-    t.integer "order_id", null: false
-    t.integer "product_id", null: false
+    t.bigint "order_id", null: false
+    t.bigint "product_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["order_id"], name: "index_order_details_on_order_id"
@@ -95,7 +98,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_03_053626) do
     t.integer "postage", null: false
     t.integer "billing_amount", null: false
     t.integer "status", default: 0, null: false
-    t.integer "customer_id", null: false
+    t.bigint "customer_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"

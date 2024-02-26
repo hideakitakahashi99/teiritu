@@ -6,7 +6,7 @@ class CreateTrials < ActiveRecord::Migration[7.1]
       t.string :address, null: false
       t.integer :tell, null: false
       t.string :email, null: false
-      t.integer :participants, null: false
+      t.integer :participants, null: false, default: 1
       t.string :date, null: false
       t.string :arrival_time, null: false
       t.string :transportation, null: false

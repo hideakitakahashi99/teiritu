@@ -13,9 +13,9 @@ services:
     buildCommand: "./bin/render-build.sh"
     startCommand: "bundle exec puma -C config/puma.rb"
     envVars:
-      - key: DATABASE_URL
+      - key: postgres://teiritu:gMEcZy41hwD5paHFEvdFfXOpPIwHaXAK@dpg-cnder2acn0vc73f696n0-a/teiritu_production
         fromDatabase:
           name: teiritu_production
           property: connectionString
-      - key: RAILS_MASTER_KEY
+      - key: 9a52904fe66accb0bf96ef879b024256%
         sync: false

@@ -24,6 +24,6 @@ module Teiritu
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
     config.time_zone = 'Tokyo'
-    config.hosts << 'nora-college.onrender.com'
+    config.hosts << 'www.nora-college.com'
   end
 end

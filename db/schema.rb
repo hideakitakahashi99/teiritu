@@ -120,7 +120,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_03_053626) do
     t.string "address", null: false
     t.integer "tell", null: false
     t.string "email", null: false
-    t.integer "participants", null: false
+    t.integer "participants", default: 1, null: false
     t.string "date", null: false
     t.string "arrival_time", null: false
     t.string "transportation", null: false

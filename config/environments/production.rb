@@ -92,7 +92,7 @@ Rails.application.configure do
   #   "example.com",     # Allow requests from example.com
   #   /.*\.example\.com/ # Allow requests from subdomains like `www.example.com`
   # ]
-  # Skip DNS rebinding protection for the default health check endpoint.
+  # Skip DNS rebinding protection for the default health :qcheck endpoint.
   # config.host_authorization = { exclude: ->(request) { request.path == "/up" } }
 
   config.action_mailer.default_url_options = { protocol: 'https', host: 'nora-college.com' }
@@ -101,8 +101,8 @@ Rails.application.configure do
     address: 'smtp.gmail.com',
     domain: 'smtp.gmail.com',
     port: 587,
-    user_name: Rails.application.credentials.dig(:gmail, :email),
-    password: Rails.application.credentials.dig(:gmail, :app_password),
+    user_name:  hideakitakahashi99@gmail.com,
+    password: iezh hkvh uhou mike,
     authentication: :login
   }
 

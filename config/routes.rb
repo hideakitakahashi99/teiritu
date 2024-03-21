@@ -48,13 +48,7 @@ end
         patch 'withdraw'
       end
     end
-    resources :trials, only: [:new, :create] do
-      collection do
-          post 'confirm'
-          post 'back'
-          get 'done'
-      end
-    end
+    
     get 'pages/term'
     get 'pages/regulation'
     get 'pages/join'
@@ -62,6 +56,8 @@ end
     get 'pages/donation'
   
   end
+
+ 
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

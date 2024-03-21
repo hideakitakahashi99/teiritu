@@ -1,12 +1,12 @@
 databases:
-  - name: nora-college
+  - name: teiritu
     databaseName: teiritu_production
     user: teiritu
     region: Singapore
 
 services:
   - type: web
-    name: nora-college
+    name: teiritu
     env: ruby
     region: Singapore
     plan: free

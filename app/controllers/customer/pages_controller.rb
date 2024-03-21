@@ -36,6 +36,15 @@ class Customer::PagesController < ApplicationController
   def done
   end
 
+  def join
+  end
+
+  def candidates
+  end
+
+  def donation
+  end
+
   private
 
   def trial_params

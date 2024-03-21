@@ -55,7 +55,12 @@ end
           get 'done'
       end
     end
-
+    get 'pages/term'
+    get 'pages/regulation'
+    get 'pages/join'
+    get 'pages/candidates'
+    get 'pages/donation'
+  
   end
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

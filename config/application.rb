@@ -24,7 +24,7 @@ module Teiritu
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
     config.time_zone = 'Tokyo'
-    config.hosts << 'teiritu.onrender.com'
+    config.hosts << 'www.teiritu.com'
     config.middleware.delete ActionDispatch::HostAuthorization
   end
 end

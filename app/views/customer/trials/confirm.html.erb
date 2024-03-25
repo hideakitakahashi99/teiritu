@@ -1,7 +1,6 @@
 
-<div class="container p-5 pt-24">
-
-    <section class="text-white body-font">
+<div class=" px-4 py-8 bg-white rounded-lg shadow dark:bg-gray-800 sm:px-6 md:px-8 lg:px-10">
+    <section class="text-black body-font p-5">
       <div class="container px-5 py-8 mx-auto">
         <div class="px-6">
          <h1 class="font-semibold text-2xl border-b pb-6 text-center">
@@ -52,7 +51,7 @@
 
       <div class="d-flex">
         
-        <%= form_with model: @trial do |f| %>
+        <%= form_with model: @trial, url: done_customer_trials_path do |f| %>
           <%= f.hidden_field :name %>
           <%= f.hidden_field :name_kana %>
           <%= f.hidden_field :address %>
@@ -63,7 +62,7 @@
           <%= f.hidden_field :arrival_time %>
           <%= f.hidden_field :transportation %>
           <%= f.hidden_field :message %>
-          <div><%= f.submit '送信', class: "w-full cursor-pointer focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2" %></div>
+          <div><%= f.submit '送信', class: "w-full cursor-pointer focus:outline-none text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2" %></div>
         <% end %>
         </div>
 
@@ -79,7 +78,7 @@
             <%= f.hidden_field :arrival_time %>
             <%= f.hidden_field :transportation %>
             <%= f.hidden_field :message %>
-          <div><%= f.submit '入力画面に戻る', class: "w-full cursor-pointer focus:outline-none text-white bg-pink-700 hover:bg-pink-800 focus:ring-4 focus:ring-pink-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2" %></div>
+          <div><%= f.submit '入力画面に戻る', class: "w-full cursor-pointer focus:outline-none text-white bg-pink-300 hover:bg-pink-400 focus:ring-4 focus:ring-pink-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2" %></div>
         <% end %>
         </div>
       </div>

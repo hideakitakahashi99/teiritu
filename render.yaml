@@ -9,7 +9,7 @@ services:
     name: teiritu
     env: ruby
     region: Singapore
-    plan: free
+    plan: Starter
     buildCommand: "./bin/render-build.sh"
     startCommand: "bundle exec puma -C config/puma.rb"
     envVars:

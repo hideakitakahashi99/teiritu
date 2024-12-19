@@ -85,39 +85,6 @@
       <%= f.select :date, Trial::DATE_ITEMS, {include_blank: "選択して下さい"}, { class: 'rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent'} %>
   </div>
 </div>
-
-  <%= f.label :arrival_time, '到着予定時刻（電車でお越しの場合は、最寄り駅の到着時間）', class: 'text-gray-700' %> 
- 
-    <span class="text-red-500 required-dot">
-     *
-    </span>
-  <%= f.time_field :arrival_time, class: 'flex-1 w-full px-4 py-2 text-base text-gray-700 placeholder-gray-400 bg-white border border-gray-300 rounded-lg appearance-none focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent' %>
-
-<div class="flex items-center gap-8 pt-2">
-<%= f.label :transportation, '当日ご利用の交通手段', class: 'text-gray-700' %> 
-<span class="text-red-500 required-dot">
-  *
-</span>
-<label class="inline-flex items-center">
-<%= f.radio_button(:transportation, '車') %>
- 
-      <span class="ml-2 text-gray-700">
-          お車
-      </span>
-  </label>
-  <label class="inline-flex items-center">
-  <%= f.radio_button(:transportation, '電車') %>
-          <span class="ml-2 text-gray-700">
-              電車
-          </span>
-      </label>
-      <label class="inline-flex items-center">
-  <%= f.radio_button(:transportation, 'それ以外の交通機関') %>
-          <span class="ml-2 text-gray-700">
-              それ以外の交通機関
-          </span>
-      </label>
-  </div>
   <div class="pt-2">
       <%= f.label :message, '備考', class: 'text-gray-700' %> 
           <span class="ml-2 text-gray-700">

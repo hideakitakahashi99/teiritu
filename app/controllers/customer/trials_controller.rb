@@ -35,7 +35,7 @@ class Customer::TrialsController < ApplicationController
   private
 
   def trial_params
-    params.require(:trial).permit(:name, :name_kana, :address, :tell, :email, :participants, :date, :arrival_time, :transportation, :message)
+    params.require(:trial).permit(:name, :name_kana, :address, :tell, :email, :participants, :date, :message)
   end
 
 

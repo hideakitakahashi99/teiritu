@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     collection do
         post 'confirm'
         post 'back'
-        get 'done'
+        post 'done'
     end
   end
 end

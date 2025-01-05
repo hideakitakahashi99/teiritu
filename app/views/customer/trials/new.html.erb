@@ -22,7 +22,7 @@
   </a>までお問い合わせください。
 </span>
 <div class="text-left p-6 mt-8">
-<%= form_with model: @trial, url: confirm_customer_trials_path, local: true, data: { turbo: "false" } do |f| %>
+<%= form_with model: @trial, url: confirm_trials_path, local: true, data: { turbo: "false" } do |f| %>
     <div class="flex gap-4 mb-2">
         <div class=" relative ">
         <%= f.label :name, 'お名前', class: 'text-gray-700' %>

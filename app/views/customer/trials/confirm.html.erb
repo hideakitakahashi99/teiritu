@@ -39,7 +39,7 @@
 
       <div class="d-flex">
         
-        <%= form_with model: @trial, url: done_customer_trials_path, method: :get do |f| %>
+        <%= form_with model: @trial, url: done_customer_trials_path do |f| %>
           <%= f.hidden_field :name %>
           <%= f.hidden_field :name_kana %>
           <%= f.hidden_field :address %>

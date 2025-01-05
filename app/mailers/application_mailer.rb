@@ -1,5 +1,5 @@
 class ApplicationMailer < ActionMailer::Base
-  default from:     "のら自然農塾事務局",
+  default from:     "鼎立の党 講演会事務局",
           bcc:       "umu.noen.natural.farming@gmail.com"
   layout "mailer"
 end

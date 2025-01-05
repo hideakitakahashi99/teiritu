@@ -21,7 +21,7 @@ class Customer::TrialsController < ApplicationController
     @trial = Trial.new(trial_params)
     if @trial.save
       TrialMailer.send_mail(@trial).deliver_now
-      redirect_to done_trials_path
+      redirect_to done_customer_trials_path
     else
       flash[:alert] = @trial.errors.full_messages.join(", ")
       @trial = Trial.new

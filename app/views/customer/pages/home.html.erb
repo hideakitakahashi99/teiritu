@@ -644,8 +644,9 @@
       こちら
   </a>までお問い合わせください。
 </span>
-<div class="text-left p-6 mt-8">
-<%= form_with model: @trial, url: confirm_trials_path, local: true, data: { turbo: "false" } do |f| %>
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSensSP8RDRbv_FZo7vh6eYw8nPaC68MMx6H3kPlvFOWdFlMow/viewform?embedded=true" width="640" height="1256" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
+<!--<div class="text-left p-6 mt-8">
+<%= form_with model: @trial, url: confirm_customer_trials_path, local: true, data: { turbo: "false" } do |f| %>
     <div class="flex gap-4 mb-2">
         <div class=" relative ">
         <%= f.label :name, 'お名前', class: 'text-gray-700' %>
@@ -708,10 +709,11 @@
       <%= f.select :date, Trial::DATE_ITEMS, {include_blank: "選択して下さい"}, { class: 'rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent'} %>
   </div>
 </div>
+  
 
                <%= f.submit '申し込む', class: "mx-auto lg:mx-0 hover:underline bg-pink-300 text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out" %>
               
-              <% end %>
+              <% end %>-->
             </div>
             </div>
 
